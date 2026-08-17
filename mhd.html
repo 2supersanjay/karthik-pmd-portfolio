@@ -16,7 +16,7 @@
       2D axisymmetric domain with ring cathode, anode, and Micro-MHD convection around the bubble.
       <br>
       <span style="font-size:0.85em;">
-        Source: Zhan, S, et al. (2022)
+        Source: (Zhan et al., 2022, Physics of Fluids)
         </a>
       </span>
     </figcaption>
@@ -39,16 +39,15 @@
 <div style="line-height:1.6; margin-top:16px;">
   <h3>MHD Bubble Departure — Custom UDF Development &amp; CFD Replication</h3>
   <p>
-    I am replicating a published hydrogen bubble growth study at KIMSLAB, extending the base VOF model with a
+    I am replicating a published hydrogen bubble growth study, extending the base VOF model with a
     custom <strong>C/C++ User-Defined Function (UDF)</strong> that applies the <strong>Lorentz force</strong> as a
     momentum source term, capturing the Micro-MHD convection that governs bubble departure at electrode-normal
-    magnetic fields. This work builds directly on prior PMD experience, applying the same VOF multiphase framework
-    to a coupled electro-magneto-hydrodynamic problem. Key aspects of the MHD bubble system:
+    magnetic fields. Key aspects of the MHD bubble system:
   </p>
   <ul>
     <li><strong>Couples electric potential, magnetic field, and dissolved species transport</strong> to a single VOF momentum equation</li>
     <li><strong>Models a single hydrogen bubble</strong> nucleating and growing on a horizontal microelectrode under an electrode-normal magnetic field</li>
-    <li><strong>Drives bubble growth through two competing mass transfer mechanisms</strong>: direct injection at the electrode and diffusion-based transfer through the bubble interface</li>
+    <li><strong>Drives bubble growth through two mass transfer mechanisms</strong>: direct injection at the electrode and diffusion-based transfer through the bubble interface</li>
   </ul>
   <p>For this project, I:</p>
   <ul>
@@ -58,7 +57,7 @@
     <li><strong>Developed a bubble nucleation seed algorithm</strong> that identifies the closest mesh cell to a specified seed coordinate and initializes a smooth VOF profile there</li>
     <li><strong>Implemented direct injection and interfacial mass transfer UDFs</strong> based on Faraday's Law and a Sherwood-number correlation, converting area-based generation rates into volumetric source terms for the VOF solver</li>
     <li><strong>Iteratively debugged UDM/UDS coupling</strong>, correcting cases where the ring cathode boundary penetrated the bubble interface and generated spurious mass transfer within the bubble interior</li>
-    <li><strong>Validated the swirl velocity field against the reference paper</strong>, confirming the rotational Micro-MHD convection pattern matches the expected qualitative behavior</li>
+    <li><strong>Verified the swirl velocity field against the reference paper</strong>, confirming the rotational Micro-MHD convection pattern matches the expected qualitative behavior</li>
   </ul>
   <p>
     This project demonstrates proficiency in <strong>custom Fluent UDF development</strong>,
@@ -107,8 +106,7 @@
          alt="Bubble Volume Integral Over 60,000 Timesteps"
          style="height:320px; width:auto; max-width:none; border:1px solid #1f2937; border-radius:8px;">
     <figcaption style="color:#9ca3af; margin-top:8px; font-size:0.9em;">
-      Bubble volume integral extended to 60,000 timesteps, showing the Young-Laplace pressure field settle
-      after initial oscillation before continuous growth resumes.
+      Bubble volume integral extended to 60,000 timesteps, showing bubble growth.
     </figcaption>
   </figure>
 
@@ -165,12 +163,8 @@
   <p>
     <strong>Current Status:</strong> The Lorentz force, ring cathode, and dissolved H₂ transport UDFs are
     implemented and individually validated against expected qualitative behavior (current density and Lorentz
-    force concentrated at the bubble base, matching the reference study). I am currently debugging a timestep
-    instability tied to Young-Laplace pressure field initialization — the referenced CFD paper does not
-    initialize the pressure field and instead lets the Continuum Surface Force model build it naturally, which
-    increases iterations per timestep in the short term but resolves the oscillation over the full run. Next
-    steps are running the corrected case on HPC and validating bubble growth diameter against the experimental
-    curve from the reference study.
+    force concentrated at the bubble base, matching the reference study). Next steps are running the
+    case on HPC and validating bubble growth diameter against the experimental curve from the reference study.
   </p>
 </div>
 
