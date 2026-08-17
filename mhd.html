@@ -8,20 +8,29 @@
 <div style="display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap; margin:20px 0;">
 
   <!-- Computational domain / Micro-MHD schematic -->
-  <figure style="flex:1; min-width:220px; max-width:360px; text-align:center; margin:0;">
+  <figure style="flex:1; min-width:220px; max-width:none; text-align:center; margin:0;">
     <img src="./mhd_computational_domain.png"
          alt="2D Axisymmetric Computational Domain and Micro-MHD Convection"
-         style="width:100%; max-width:360px; border:1px solid #1f2937; border-radius:8px;">
+         style="width:100%; max-width:none; border:1px solid #1f2937; border-radius:8px;">
     <figcaption style="color:#9ca3af; margin-top:8px; font-size:0.9em;">
       2D axisymmetric domain with ring cathode, anode, and Micro-MHD convection around the bubble.
+      <br>
+      <span style="font-size:0.85em;">
+        Source: Zhan, S., Yuan, R., Huang, Y., Zhang, W., Li, B., Wang, Z., &amp; Wang, J. (2022).
+        Numerical simulation of hydrogen bubble growth and mass transfer on horizontal microelectrode
+        surface under electrode-normal magnetic field. <em>Physics of Fluids, 34</em>(11), 112120.
+        <a href="https://doi.org/10.1063/5.0127299" style="color:#38bdf8;" target="_blank" rel="noopener">
+          https://doi.org/10.1063/5.0127299
+        </a>
+      </span>
     </figcaption>
   </figure>
 
   <!-- Bubble nucleation VOF logic -->
-  <figure style="flex:1; min-width:220px; max-width:360px; text-align:center; margin:0;">
+  <figure style="flex:1; min-width:220px; max-width:none; text-align:center; margin:0;">
     <img src="./mhd_bubble_nucleation_vof.png"
          alt="Bubble Nucleation Seed and VOF Logic"
-         style="width:100%; max-width:360px; border:1px solid #1f2937; border-radius:8px;">
+         style="width:100%; max-width:none; border:1px solid #1f2937; border-radius:8px;">
     <figcaption style="color:#9ca3af; margin-top:8px; font-size:0.9em;">
       Seeded bubble nucleus generated via custom VOF profile at the cathode surface.
     </figcaption>
@@ -64,19 +73,19 @@
   <!-- === Ring Cathode + Lorentz Force Side-by-Side === -->
   <div style="display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap; margin:20px 0;">
 
-    <figure style="flex:1; min-width:180px; max-width:280px; text-align:center; margin:0;">
+    <figure style="flex:1; min-width:220px; max-width:none; text-align:center; margin:0;">
       <img src="./mhd_ring_cathode_flux.png"
            alt="Ring Cathode Current Density Distribution"
-           style="width:100%; max-width:280px; border:1px solid #1f2937; border-radius:8px;">
+           style="width:100%; max-width:none; border:1px solid #1f2937; border-radius:8px;">
       <figcaption style="color:#9ca3af; margin-top:8px; font-size:0.9em;">
         Current density confined to the virtual ring cathode adjacent to the bubble base.
       </figcaption>
     </figure>
 
-    <figure style="flex:1; min-width:220px; max-width:360px; text-align:center; margin:0;">
+    <figure style="flex:1; min-width:220px; max-width:none; text-align:center; margin:0;">
       <img src="./mhd_lorentz_force_contour.png"
            alt="Lorentz Force Source Term Contour"
-           style="width:100%; max-width:360px; border:1px solid #1f2937; border-radius:8px;">
+           style="width:100%; max-width:none; border:1px solid #1f2937; border-radius:8px;">
       <figcaption style="color:#9ca3af; margin-top:8px; font-size:0.9em;">
         Lorentz force source term after restricting the UDM to interfacial cells, removing spurious interior terms.
       </figcaption>
@@ -88,19 +97,19 @@
   <!-- === Swirl Velocity + Volume Integral Side-by-Side === -->
   <div style="display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap; margin:20px 0;">
 
-    <figure style="flex:1; min-width:220px; max-width:360px; text-align:center; margin:0;">
+    <figure style="flex:1; min-width:220px; max-width:none; text-align:center; margin:0;">
       <img src="./mhd_swirl_velocity_contour.png"
            alt="Swirl Velocity Contour"
-           style="width:100%; max-width:360px; border:1px solid #1f2937; border-radius:8px;">
+           style="width:100%; max-width:none; border:1px solid #1f2937; border-radius:8px;">
       <figcaption style="color:#9ca3af; margin-top:8px; font-size:0.9em;">
         Swirl velocity contour at 10,000 timesteps, showing rotational flow consistent with the reference paper.
       </figcaption>
     </figure>
 
-    <figure style="flex:1; min-width:220px; max-width:360px; text-align:center; margin:0;">
+    <figure style="flex:1; min-width:220px; max-width:none; text-align:center; margin:0;">
       <img src="./mhd_bubble_volume_integral.png"
            alt="Bubble Volume Integral Over 60,000 Timesteps"
-           style="width:100%; max-width:360px; border:1px solid #1f2937; border-radius:8px;">
+           style="width:100%; max-width:none; border:1px solid #1f2937; border-radius:8px;">
       <figcaption style="color:#9ca3af; margin-top:8px; font-size:0.9em;">
         Bubble volume integral extended to 60,000 timesteps, showing the Young-Laplace pressure field settle
         after initial oscillation before continuous growth resumes.
